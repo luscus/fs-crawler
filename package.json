@@ -1,0 +1,37 @@
+{
+  "name": "fs-crawler",
+  "license": "MIT",
+  "version": "0.0.1",
+  "homepage": "https://github.com/luscus/fs-crawler",
+  "author": "https://github.com/luscus/fs-crawler/graphs/contributors",
+  "description": "Crawls the file system and streams the directory/file information",
+  "keywords": [
+    "fs",
+    "crawler",
+    "filesystem",
+    "file system"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "devmode": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jsdoc-to-markdown": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.6",
+    "gulpfile.basics": "^0.0.3",
+    "mocha": "^2.3.4",
+    "pem": "^1.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luscus/fs-crawler.git"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "bugs": "https://github.com/luscus/fs-crawler/issues",
+  "main": "./lib/fs-crawler.js"
+}
