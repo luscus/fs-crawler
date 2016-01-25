@@ -21,7 +21,6 @@ crawler.on('data', function (data) {
 
 crawler.on('end', function (data) {
   console.log(data, '\n');
-  crawler.restart(2000);
 });
 
 crawler.on('close', function (data) {
