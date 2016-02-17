@@ -1,14 +1,13 @@
 'use strict';
 
 var path    = require('path');
-var devmode = require('devmode');
 
 require('chai').should();
 
 var Crawler = require('../lib/fs-crawler');
 var options = {
-  root: path.normalize(__dirname + path.sep + '..' + path.sep + 'lib'),
-  maxDepth: 0
+  root: path.normalize(__dirname + path.sep + 'fs'),
+  maxDepth: 3
 };
 
 
@@ -16,11 +15,14 @@ var crawler = new Crawler(options);
 crawler.setEncoding('utf8');
 
 crawler.on('data', function (data) {
-  console.log('=>'+data+'<=');
+  data = JSON.parse(data);
+  if (!data.is.directory) {
+    console.log(data.path, '=>', data.directory);
+  }
 });
 
 crawler.on('end', function (data) {
-  console.log(data, '\n');
+  console.log(data);
 });
 
 crawler.on('close', function (data) {
