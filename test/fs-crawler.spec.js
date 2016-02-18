@@ -16,9 +16,7 @@ crawler.setEncoding('utf8');
 
 crawler.on('data', function (data) {
   data = JSON.parse(data);
-  if (!data.is.directory) {
-    console.log(data.path, '=>', data.directory);
-  }
+  console.log(data.directory, '=>', data.path);
 });
 
 crawler.on('end', function (data) {
