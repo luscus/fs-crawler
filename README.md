@@ -15,10 +15,13 @@ Crawls the file system and streams the directory/file information.
 
 ### Installation
 
-    npm install fs-crawler --save
+```bash
+npm install fs-crawler --save
+```
 
 ### Require module
 
+```javascript
     var Crawler = require('fs-crawler');
     
     var options = {
@@ -46,6 +49,7 @@ Crawls the file system and streams the directory/file information.
     
     // start streaming
     crawler.resume();
+```
 
 ## Usage
 
