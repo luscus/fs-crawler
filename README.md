@@ -26,7 +26,6 @@ npm install fs-crawler --save
     
     var options = {
       root: '/some/absolut/path/to/directory',
-      flushOnEnd: true, // all found filesystem elements are returned on 'end'
       maxDepth: 0       // max subdirectory depth for crawling, 0 = infinity
     };
     
@@ -40,7 +39,6 @@ npm install fs-crawler --save
     
     crawler.on('end', function (data) {
       // returns crawl duration in milliseconds
-      // and optionally the found elements
       console.log(data);
       
       // recrawls the filesystem using the same options
