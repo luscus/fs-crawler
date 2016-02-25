@@ -11,11 +11,9 @@
 
 Crawls the file system and streams the directory/file information.
 
-## Installation
+## Usage
 
-### Node Dependencies
-
-Execute following line
+### Installation
 
     npm install fs-crawler --save
 
@@ -51,7 +49,6 @@ Execute following line
 
 ## Usage
 
-### match, matchInRoot, matchInExternal
 
 -------------------
 Copyright (c) 2016 Luscus (luscus.redbeard@gmail.com)
