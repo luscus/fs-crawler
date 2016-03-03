@@ -19,14 +19,13 @@ results.forEach(function (data) {
   console.log('TREE SYNC: ', data.folderId, '=>', data.path);
 });
 
-results = crawler.crawlPathSync('/media/nysos/Nysos-EXT/dev/fs-crawler/test/fs/long/deep/path/to/files', options);
+results = crawler.crawlPathSync(__dirname + '/fs/long/deep/path/to/files', options);
 
 console.log('-------------------');
 
 results.forEach(function (data) {
   console.log('PATH SYNC: ', data.folderId, '=>', data.path);
 });
-
 
 process.on('uncaughtException', function (er) {
   console.error('EXCEPTION', er.stack);
