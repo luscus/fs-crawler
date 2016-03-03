@@ -11,6 +11,23 @@
 
 Crawls the file system and streams the directory/file information.
 
+## Configuration Options
+
+### Common
+
+* `maxDepth` {number}: max number of folder depth to be crawled to
+* `noStats` {boolean}: no file statistics will be retrieved - sparing I/O - only absolute path will be returned
+
+### ASYNC Mode
+
+* `flushOnEnd` {boolean}: returns all the data at the end of the stream
+
+### Tree Mode
+
+### Path Mode
+
+* `reverse` {boolean}: path will be traversed from `maxDepth` to `root`
+
 ## Usage
 
 ### Installation
@@ -48,8 +65,6 @@ npm install fs-crawler --save
     // start streaming
     crawler.resume();
 ```
-
-## Usage
 
 
 -------------------

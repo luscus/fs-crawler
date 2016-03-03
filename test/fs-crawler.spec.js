@@ -7,7 +7,7 @@ require('chai').should();
 var Crawler = require('../lib/fs-crawler');
 var options = {
   root: path.normalize(__dirname + path.sep + 'fs'),
-  maxDepth: 3
+  maxDepth: 4
 };
 
 
@@ -16,7 +16,8 @@ crawler.setEncoding('utf8');
 
 crawler.on('data', function (data) {
   data = JSON.parse(data);
-  console.log(data.directory, '=>', data.path);
+
+  console.log(data.folderId, '=>', data.path);
 });
 
 crawler.on('end', function (data) {
