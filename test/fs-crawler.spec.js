@@ -4,14 +4,19 @@ var path    = require('path');
 
 require('chai').should();
 
-var Crawler = require('../lib/fs-crawler');
-var options = {
-  root: path.normalize(__dirname + path.sep + 'fs'),
+var Crawler  = require('../lib/fs-crawler');
+var testPath = path.normalize(__dirname + path.sep + 'fs');
+var options  = {
+  reverse: true,
+  noStats: false,
+  filters: ['txt'],
   maxDepth: 4
 };
 
 
-var crawler = new Crawler(options);
+var crawler = new Crawler();
+
+var results = crawler.crawlTreeSync(testRoot, options);
 crawler.setEncoding('utf8');
 
 crawler.on('data', function (data) {
