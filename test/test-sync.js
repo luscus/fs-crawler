@@ -6,7 +6,8 @@ var testRoot = path.normalize(__dirname + path.sep + 'fs');
 var options  = {
   reverse: true,
   noStats: false,
-  maxDepth: 0
+  filters: ['txt'],
+  maxDepth: 4
 };
 
 
@@ -25,7 +26,6 @@ console.log('-------------------');
 results.forEach(function (data) {
   console.log('PATH SYNC: ', data.folderId, '=>', data.path);
 });
-console.log('FILE OBJECT: ', results[0]);
 
 
 process.on('uncaughtException', function (er) {

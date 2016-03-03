@@ -17,14 +17,13 @@ Crawls the file system and streams the directory/file information.
 
 * `maxDepth` {number}: max number of folder depth to be crawled to
 * `noStats` {boolean}: no file statistics will be retrieved - sparing I/O - only absolute path will be returned
+* `filters` {string[]|regex[]}: a mixed array of file extension strings or regular expressions applied against every found file path
 
-### ASYNC Mode
+### ASYNC Mode Specific
 
 * `flushOnEnd` {boolean}: returns all the data at the end of the stream
 
-### Tree Mode
-
-### Path Mode
+### Path Mode Specific
 
 * `reverse` {boolean}: path will be traversed from `maxDepth` to `root`
 
@@ -39,33 +38,20 @@ npm install fs-crawler --save
 ### Require module
 
 ```javascript
-    var Crawler = require('fs-crawler');
-    
-    var options = {
-      root: '/some/absolut/path/to/directory',
-      maxDepth: 0       // max subdirectory depth for crawling, 0 = infinity
-    };
-    
-    var crawler = new Crawler(options);
-    crawler.setEncoding('utf8'); // String wanted not Buffer
-    
-    crawler.on('data', function (data) {
-      // information about a file or a directory
-      console.log(data);
-    });
-    
-    crawler.on('end', function (data) {
-      // returns crawl duration in milliseconds
-      console.log(data);
-      
-      // recrawls the filesystem using the same options
-      crawler.restart(2000);
-    });
-    
-    // start streaming
-    crawler.resume();
-```
+var Crawler = require('fs-crawler');
 
+var options  = {
+  reverse: true,
+  noStats: false,
+  filters: ['txt'],
+  maxDepth: 4
+};
+
+
+var crawler = new Crawler();
+
+var results = crawler.crawlTreeSync(testRoot, options);
+```
 
 -------------------
 Copyright (c) 2016 Luscus (luscus.redbeard@gmail.com)
