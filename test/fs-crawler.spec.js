@@ -16,7 +16,7 @@ var options  = {
 
 var crawler = new Crawler();
 
-var results = crawler.crawlTreeSync(testRoot, options);
+var results = crawler.crawlTreeSync(testPath, options);
 crawler.setEncoding('utf8');
 
 crawler.on('data', function (data) {
