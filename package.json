@@ -1,7 +1,7 @@
 {
   "name": "fs-crawler",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/luscus/fs-crawler",
   "author": "https://github.com/luscus/fs-crawler/graphs/contributors",
   "description": "Crawls the file system and streams the directory/file information",
