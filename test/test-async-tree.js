@@ -2,7 +2,7 @@
 
 var path     = require('path');
 var Crawler  = require('../lib/fs-crawler');
-var testRoot = path.normalize(__dirname + path.sep + 'RESTfs-api-test');
+var testRoot = path.normalize(__dirname + path.sep + 'fs');
 var options  = {
   flushOnEnd: true,
   reverse:    false,
